@@ -1,5 +1,5 @@
 export default function getNeighborhoodsList() {
-  this.sanFranciscoNeighborhoods = ["SOMA", "Union Square"];
+  this.sanFranciscoNeighborhoods = ['SOMA', 'Union Square'];
 
   /* Arrow function does not have its own 'this' context,
     so 'this' refers to the enclosing context */
