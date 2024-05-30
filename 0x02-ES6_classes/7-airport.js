@@ -15,7 +15,7 @@ export default class Airport {
   // set code(code) {
   //   this._code = code;
   // }
-  getInfo() {
-    return `${this._name} (${this._code})`;
+  toString() {
+    return `[object ${this._code}]`;
   }
 }
