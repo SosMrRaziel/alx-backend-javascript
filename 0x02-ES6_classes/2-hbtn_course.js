@@ -10,11 +10,12 @@ export default class HolbertonCourse {
     this._students = students;
   }
 
-  _verifyType(attr, type) {
-    if (typeof attr !== type) {
-      throw TypeError(`${attr} must be a ${type}`);
+  _verifyType(value, type, attribute) {
+    if (typeof value !== type || (type === 'object' && !Array.isArray(value))) {
+      throw TypeError(`${attribute} must be a ${type}`);
     }
   }
+
   get name() {
     return this._name;
   }
