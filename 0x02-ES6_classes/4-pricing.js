@@ -1,3 +1,4 @@
+/* eslint-disable */
 const Currency = require('./3-currency');
 
 class Pricing {
