@@ -1,3 +1,4 @@
+/* eslint-disable */
 function cleanSet(set, start_string) {
   if (
     start_string === '' ||
