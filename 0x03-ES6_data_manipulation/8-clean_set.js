@@ -1,16 +1,20 @@
-/* eslint-disable */
-function cleanSet(set, start_string) {
+function cleanSet(set, startString) {
+  const string = [];
+
   if (
-    start_string === '' ||
-    typeof start_string !== 'string' ||
-    start_string.length === 0
+    typeof set !== 'object' ||
+    typeof startString !== 'string' ||
+    startString.length === 0
   ) {
     return '';
   }
-  return [...set]
-    .filter((str) => str.startsWith(start_string))
-    .map((str) => str.replace(start_string, ''))
-    .join('-');
+
+  for (const item of set) {
+    if (item && item.startsWith(startString)) {
+      string.push(item.slice(startString.length));
+    }
+  }
+  return string.join('-');
 }
 
 export default cleanSet;
