@@ -1,5 +1,5 @@
 function updateUniqueItems(map) {
-  if (map.size === 0 || !(map instanceof Map) {
+  if (map.size === 0 || !(map instanceof Map)) {
     return 'Cannot process';
   }
   for (const [key, value] of map) {
