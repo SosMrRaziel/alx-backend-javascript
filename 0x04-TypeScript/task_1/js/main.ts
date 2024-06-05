@@ -1,29 +1,11 @@
-class Teacher {
+interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [propName: string]: any; // This allows adding any other properties
-
-  constructor(
-    firstName: string,
-    lastName: string,
-    fullTimeEmployee: boolean,
-    location: string,
-    yearsOfExperience?: number,
-    contract?: boolean
-  ) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.fullTimeEmployee = fullTimeEmployee;
-    this.location = location;
-    this.yearsOfExperience = yearsOfExperience;
-    // The contract attribute is optional and can be added dynamically
-    if (contract !== undefined) {
-      this.contract = contract;
-    }
-  }
+  // Index signature to allow additional properties
+  [propName: string]: any;
 }
 
 const teacher3: Teacher = {
@@ -35,3 +17,17 @@ const teacher3: Teacher = {
 };
 
 console.log(teacher3);
+
+// Path: 0x04-TypeScript/task_1/js/main.ts
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+console.log(director1);
