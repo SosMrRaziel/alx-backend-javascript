@@ -1,19 +1,19 @@
 // 1-stdin.js
-const readline = require('readline');
+const msg1 = 'Welcome to Holberton School, what is your name?\n';
+const msg2 = 'This important software is now closing\n';
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+process.stdout.write(msg1);
+
+process.stdin.on('readable', () => {
+  const input = process.stdin.read();
+
+  if (input !== null) {
+    process.stdout.write(`Your name is: ${input}`);
+  }
 });
 
-console.log('Welcome to Holberton School, what is your name?');
+process.stdin.on('end', () => {
+  process.stdout.write(msg2);
 
-rl.on('line', (input) => {
-  if (input.trim() === '') {
-    console.log('This important software is now closing');
-    rl.close();
-  } else {
-    console.log(`Your name is: ${input}`);
-    rl.close();
-  }
+  process.exit();
 });
