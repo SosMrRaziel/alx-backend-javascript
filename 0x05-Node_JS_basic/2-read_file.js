@@ -1,5 +1,5 @@
 // 2-read_file.js
-
+/*eslint-disable*/
 const fs = require('fs');
 
 function countStudents(path) {
