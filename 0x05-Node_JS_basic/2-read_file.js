@@ -10,7 +10,7 @@ function countStudents(path) {
     const csStudents = students.filter((student) => student[3] === 'CS');
     const sweStudents = students.filter((student) => student[3] === 'SWE');
 
-    console.log(`Number of students: ${students.length}`);
+    console.log(`Number of students: ${students.length - 1}`);
     console.log(
       `Number of students in CS: ${csStudents.length}. List: ${csStudents
         .map((s) => s[0])
