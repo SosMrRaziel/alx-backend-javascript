@@ -44,7 +44,7 @@ const app = http.createServer((req, res) => {
         }. List: ${students
           .filter((s) => s[3] === 'SWE')
           .map((s) => s[0])
-          .join(', ')}\n`
+          .join(', ')}`
       );
       res.end();
     });
