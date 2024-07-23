@@ -22,7 +22,7 @@ function countStudents(path) {
         .join(', ')}`
     );
   } catch (error) {
-    console.error(`Cannot load the database: ${error.message}`);
+    throw Error('Cannot load the database');
   }
 }
 
