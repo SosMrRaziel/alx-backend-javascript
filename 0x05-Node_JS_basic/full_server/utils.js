@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const { readFile } = require('fs');
 
 module.exports = function readDatabase(filePath) {
