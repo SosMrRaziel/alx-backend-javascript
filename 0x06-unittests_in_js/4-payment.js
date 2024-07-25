@@ -1,9 +1,12 @@
 // 4-payment.js
-/*eslint-disable*/
-const utils = require('./utils');
+const Utils = require('./utils');
 
-module.exports = function sendPaymentRequestToApi(totalAmount, totalShipping) {
-  const total = utils.calculateNumber('SUM', totalAmount, totalShipping);
-  console.log(`The total is: ${total}`);
-  return total;
-};
+/**
+ * Sends a payment request to the API.
+ * @param {number} totalAmount - The total amount.
+ * @param {number} totalShipping - The total shipping cost.
+ */
+function sendPaymentRequestToApi(totalAmount, totalShipping) {
+  const sumResult = Utils.calculateNumber('SUM', totalAmount, totalShipping);
+  console.log(`The total is: ${sumResult}`);
+}
