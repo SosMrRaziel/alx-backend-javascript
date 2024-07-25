@@ -1,22 +1,34 @@
 // 0-calcul.test.js
 /*eslint-disable*/
+const calculateNumber = require('./0-calcul.js');
 const assert = require('assert');
-const calculateNumber = require('./0-calcul');
 
-// Test case 1: Whole numbers
-const result1 = calculateNumber(1, 3);
-assert.strictEqual(result1, 4);
+describe('calculateNumber', () => {
+  it('should return 4', () => {
+    assert.strictEqual(calculateNumber(1, 3), 4);
+  });
 
-// Test case 2: Decimal input (rounding up)
-const result2 = calculateNumber(1, 3.7);
-assert.strictEqual(result2, 5);
+  it('should return 4', () => {
+    assert.strictEqual(calculateNumber(1.2, 3), 4);
+  });
 
-// Test case 3: Decimal input (both numbers rounded)
-const result3 = calculateNumber(1.2, 3.7);
-assert.strictEqual(result3, 5);
+  it('should return 5', () => {
+    assert.strictEqual(calculateNumber(1, 3.7), 5);
+  });
 
-// Test case 4: Decimal input (both numbers rounded up)
-const result4 = calculateNumber(1.5, 3.7);
-assert.strictEqual(result4, 6);
+  it('should return 6', () => {
+    assert.strictEqual(calculateNumber(3, 3.1), 6);
+  });
 
-console.log('All tests passed!');
+  it('should return 5', () => {
+    assert.strictEqual(calculateNumber(1.2, 3.7), 5);
+  });
+
+  it('should return 6', () => {
+    assert.strictEqual(calculateNumber(1.5, 3.7), 6);
+  });
+
+  it('should return 1', () => {
+    assert.strictEqual(calculateNumber(0.7, 0.4), 1);
+  });
+});
