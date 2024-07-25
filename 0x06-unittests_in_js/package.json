@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "node 0-calcul.test.js"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "mocha": "^10.2.0"
+  }
+}
