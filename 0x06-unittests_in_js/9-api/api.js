@@ -5,13 +5,14 @@ const app = express();
 const port = 7865;
 
 app.get('/', (req, res) => {
-  res.end('Welcome to the payment system');
+  res.send('Welcome to the payment system');
 });
 
-app.get('/cart/:id([0-9]+)', (req, res) => {
-  res.end(`Payment methods for cart ${req.params.id}`);
+app.get('/cart/:id(\\d+)', (req, res) => {
+  const cartId = req.params.id;
+  res.send(`Payment methods for cart ${cartId}`);
 });
 
 app.listen(port, () => {
-  console.log('API available on localhost port 7865');
+  console.log(`API available on localhost port ${port}`);
 });
